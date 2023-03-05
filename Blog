@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<asd>Page Title</asd>
+</head>
+<body>
+
+
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<button type="button" onclick="/Blog">Click Me!</button>
+
+</body>
+</html>
+
+
