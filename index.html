@@ -1,14 +1,17 @@
-
+<!DOCTYPE html>
 <html>
-<head>
-<asd>Page Title</asd>
-</head>
-<body>
-
-
-<button type="button" onclick="/Blog.html">Click Me!</button>
-
-</body>
+  <head>
+    <title>Button Redirect Example</title>
+  </head>
+  <body>
+    <h1>Welcome to my website!</h1>
+    <p>Click the button below to go to another page.</p>
+    <button onclick="redirectToPage()">Go to Page 2</button>
+    
+    <script>
+      function redirectToPage() {
+        window.location.href = "/Blog.html";
+      }
+    </script>
+  </body>
 </html>
-
-
