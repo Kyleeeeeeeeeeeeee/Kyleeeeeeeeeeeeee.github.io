@@ -330,3 +330,28 @@ infonotify("Buy Block Enabled", "Have Fun", 1)
 	["HoverText"] = "Automatically Buys Blocks"
 })
 
+local BuyBlocks = COB("World", {
+	["Name"] = "RGB Health",
+	["Function"] = function(callback)
+		if callback then
+			pcall(function()
+				ScriptSettings.RGB = true
+				while task.wait() do
+					if not ScriptSettings.RGB == true then game:GetService("Players").LocalPlayer.PlayerGui.hotbar["1"].HotbarHealthbarContainer.HealthbarProgressWrapper["1"].BackgroundColor3 = Color3.new(255,0,0) end
+						local r = (math.sin(workspace.DistributedGameTime/2)/2)+0.5
+						local g = (math.sin(workspace.DistributedGameTime)/2)+0.5
+						local b = (math.sin(workspace.DistributedGameTime*1.5)/2)+0.5
+						local color = Color3.new(r, g, b)
+						game:GetService("Players").LocalPlayer.PlayerGui.hotbar["1"].HotbarHealthbarContainer.HealthbarProgressWrapper["1"].BackgroundColor3 = color
+				end
+			end)
+		else
+			pcall(function()
+				ScriptSettings.RGB = false
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "Automatically Buys Blocks"
+})
+
