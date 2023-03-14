@@ -5,7 +5,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Kyl
 local Window = OrionLib:MakeWindow({Name = "Kylee's Hub", HidePremium = true, SaveConfig = false, ConfigFolder = "Kylee"})
 
 local Tab = Window:MakeTab({
-	Name = "100M Event!",
+	Name = "ST Patrick Event!",
 	Icon = "rbxassetid://7657243214",
 	PremiumOnly = false
 })
@@ -45,8 +45,8 @@ Tab:AddToggle({
 	Callback = function(Value)
         getgenv().CollectCupcakes = Value
         while getgenv().CollectCupcakes do
-        wait(0.2)
-        for i,v in pairs(game:GetService("Workspace").Scripts.CollectCupcakes.Storage:GetDescendants()) do
+        wait()
+        for i,v in pairs(game:GetService("Workspace").Scripts.CollectClovers.Storage:GetDescendants()) do
           if (v.Name == "TouchInterest" and v.Parent) then
           firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
           wait()
@@ -57,53 +57,6 @@ Tab:AddToggle({
 end
 })
 
-local EventUpgrader = Tab:AddSection({
-    Name = "Event Upgrader"
-})
-
-  function upgrade(option)
-    local args = {
-        [1] = option,
-        [2] = "100m",
-    }
-  game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
-    end
-
-    local eventupgraders;
-    Tab:AddDropdown({
-        Name = "Dropdown",
-        Default = "Select Event Upgrader",
-        Options = {"Click Multiplier", "Bank Space", "+1 Pet Equip", "Hatch Speed", "Gems Multiplier", "Luck Multiplier", "Cupcakes Multiplier"},
-        Callback = function(Option)
-            if Option == "Click Multiplier" then
-                eventupgraders = "ClickMultiplier";
-               elseif Option == "Bank Space" then
-                eventupgraders = "BankSlots";
-               elseif Option == "+1 Pet Equip" then
-                eventupgraders = "PetEquip";
-               elseif Option == "Hatch Speed" then
-                eventupgraders = "HatchSpeed";
-               elseif Option == "Luck Multiplier" then
-                eventupgraders = "LuckMultiplier";
-               elseif Option == "Cupcakes Multiplier" then
-                eventupgraders = "CupcakesMultiplier";
-        end    
-      end
-    })
-  
-    
-  local EventUpgradeWarn = Tab:AddLabel("Must Set Event Upgrader Option First")
-
-  Tab:AddToggle({
-	Name = "Enable Event Upgrader!",
-	Default = false,
-	Callback = function(Value)
-        getgenv().EventUpgrader = Value 
-        while getgenv().EventUpgrader == true do wait(1)
-          upgrade(eventupgraders)
-                end
-	end    
-})
 -------------------------------------------------------------------------------------------------------------------------------
 
 local Farm = Tab2:AddSection({
