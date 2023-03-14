@@ -40,11 +40,11 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddToggle({
-	Name = "Auto Collect Cupcake",
+	Name = "Auto Collect Clover",
 	Default = false,
 	Callback = function(Value)
-        getgenv().CollectCupcakes = Value
-        while getgenv().CollectCupcakes do
+        getgenv().CollectClover = Value
+        while getgenv().CollectClover do
         wait()
         for i,v in pairs(game:GetService("Workspace").Scripts.CollectClovers.Storage:GetDescendants()) do
           if (v.Name == "TouchInterest" and v.Parent) then
